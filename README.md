@@ -1,32 +1,32 @@
 # Bits
 
-This lib aims to implement binary bit flags in Haxe with unlimited amount of bits per instance.
+This gem aims to implement binary bit flags in Ruby with a (theoretically) unlimited number of bits per instance.
 
-```haxe
-var flags = new bits.Bits();
+```ruby
+flags = Bits.new
 
-flags.set(2); // set a bit at position 2 (zero-based)
-flags.set(5);
+flags.set(2) // set a bit at position 2 (zero-based)
+flags.set(5)
 
-flags.toString(); // "10010"
+puts flags.to_s // "10010"
 
-flags.isSet(2); // true
-flags.areSet([2, 5]); // true;
+puts flags.set?(2)       // true
+puts flags.set?([2, 5])  // true
 
-flags.set(9999);
-flags.isSet(9999); // true
+flags.set(9999)
+puts flags.set?(9999)    // true
 ```
-`bits.Bits` is implemented as an abstract over `Array<Int>`. Each item of that array is used to store 32 flags.
+`bits.Bits` inherits from `Array`. The array is used to store bitflags packed into `Integer`s.
 
 ### API
 
+```ruby
+# Create a `Bits` instance using values of `positions` as positions of bits, which should be set to 1.
+# E.g. `[0, 2, 7]` will produce a `Bits` instance of `10000101`.
+# If there is a negative value in `positions` the result is unspecified.
+```
 ```haxe
-/**
- * Create a `bits.Bits` instance using values of `positions` as positions of bits, which should be set to 1.
- * E.g. `[0, 2, 7]` will produce `bits.Bits` instance of `10000101`.
- * If there is a negative value in `positions` the result is unspecified.
- */
-@:from static public function fromPositions(positions:Array<Int>):Bits;
+/* TODO: Change the code from here down once the Ruby API is settled. -ajb */
 
 /**
  * Create a new instance.
