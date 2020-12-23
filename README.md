@@ -16,7 +16,7 @@ puts flags.set?([2, 5])  // true
 flags.set(9999)
 puts flags.set?(9999)    // true
 ```
-`bits.Bits` inherits from `Array`. The array is used to store bitflags packed into `Integer`s.
+`Bits` inherits from `Array`. The array is used to store bitflags packed into `Integer`s.
 
 ### API
 
